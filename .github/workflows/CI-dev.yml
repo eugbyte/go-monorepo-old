@@ -40,9 +40,9 @@ jobs:
         run: go mod download && make install-gotest && sudo make install-lint && sudo make install-docker-compose
 
       - name: Run test
-        run: make test-notify
+        run: make test-greet
 
       - name: Run lint
-        run: make lint-notify
+        run: make lint-greet
 
 
