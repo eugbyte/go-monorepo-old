@@ -2,9 +2,9 @@
 ## About
 monorepo in golang
 
-The service/greet module can reference the libs/util modules
+The crucial feature of `go 1.18` that enables monorepo is the use of go workspaces, or `go.work`
 
-The crucial feature of go 1.18 that enables monorepo is the use of go workspaces, or `go.work`
+The `services/greet` module can reference the `libs/util` modules
 
 ## Installation
 ```
