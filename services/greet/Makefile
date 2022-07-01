@@ -1,5 +1,4 @@
 #----DEVELOPMENT----
-
 tidy:
 	go mod tidy -e
 
@@ -25,7 +24,6 @@ test:
 	make test-handlers
 
 #----LINT----
-
 lint:
 	@if [ -z `which golangci-lint 2> /dev/null` ]; then \
 			echo "Need to install golangci-lint, execute \"make lint-install\"";\
