@@ -13,7 +13,7 @@ clean:
 
 #----TESTING----
 test-handlers:
-	gotest -v ./hello_handler/... || go clean -testcache
+	go test -v ./hello_handler/... || go clean -testcache
 	go clean -testcache
 test:
 	make test-handlers
