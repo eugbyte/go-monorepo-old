@@ -15,5 +15,5 @@ type Conf struct {
 }
 
 var Config = Conf{
-	LOCAL_PORT: GetEnvOrDefault("FUNCTIONS_CUSTOMHANDLER_PORT", "8080"),
+	LOCAL_PORT: GetEnvOrDefault("PORT", "8080"),
 }

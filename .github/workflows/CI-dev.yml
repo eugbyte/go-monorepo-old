@@ -1,4 +1,4 @@
-name: golang CI-dev
+name: go-monorepo CI
 
 on: [push]
 
@@ -11,9 +11,7 @@ jobs:
     #   options: --user 0
 
     env:
-      AWS_ACCESS_KEY_ID: "123"
-      AWS_SECRET_ACCESS_KEY: "123"
-      AWS_DEFAULT_REGION: ap-southeast-1
+      PORT: 4000
 
     defaults:
       run:
@@ -21,31 +19,24 @@ jobs:
     steps:
       - name: Checkout sls-go-mod
         uses: actions/checkout@v2
-
       - name: Print dir
         run: ls
-
       - name: Update ubuntu
         run: sudo apt-get -qq update
-
       - name: Install curl, jq, make, zip, ping, net-tools
         run:  sudo apt-get -qq -y install curl jq build-essential zip iputils-ping net-tools
-
       - name: Install Go
         uses: actions/setup-go@v2
         with:
           go-version: '1.18'
-
-      - name: Install Go modules, golangci-lint and docker-comose
-        run: go mod download && sudo make install-lint && sudo make install-docker-compose
-
-      - name: Install gotest
-        run: sudo make install-gotest
-
+      - name: Install Go modules
+        run: go mod download
+      - name: Install golangci-lint docker-comose, gotest
+        run: |
+          sudo make install-lint
+          sudo make install-docker-compose
+          sudo make install-gotest
       - name: Run test
         run: make test-greet
-
       - name: Run lint
         run: make lint-greet
-
-
