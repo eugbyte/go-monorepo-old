@@ -5,7 +5,7 @@ tidy-greet:
 build-greet:
 	cd services/greet && make build
 watch-greet:
-	cd services/greet && watch notify
+	cd services/greet && make watch
 dev-greet:
 	cd services/greet && make dev
 test-greet:
