@@ -36,8 +36,11 @@ jobs:
         with:
           go-version: '1.18'
 
-      - name: Install Go modules, gotest, golangci-lint and docker-comose
-        run: go mod download && sudo make install-gotest && sudo make install-lint && sudo make install-docker-compose
+      - name: Install Go modules, golangci-lint and docker-comose
+        run: go mod download && sudo make install-lint && sudo make install-docker-compose
+
+      - name: Install gotest
+        run: sudo make install-gotest
 
       - name: Run test
         run: make test-greet
