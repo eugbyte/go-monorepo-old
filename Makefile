@@ -9,7 +9,7 @@ watch-greet:
 dev-greet:
 	cd services/greet && make dev
 test-greet:
-	cd services/greet && make test-handlers
+	cd services/greet && make test
 lint-greet:
 	cd services/greet && make lint
 lint-fix-greet:
