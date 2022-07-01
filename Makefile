@@ -1,30 +1,27 @@
 #----SERVICES----
 
-##----NOTIFY----
+##----GREET----
 
-tidy-notify:
-	cd services/notify && make tidy
+tidy-greet:
+	cd services/greet && make tidy
 
-build-notify:
-	cd services/notify && make build
+build-greet:
+	cd services/greet && make build
 
-watch-notify:
-	cd services/notify && watch notify
+watch-greet:
+	cd services/greet && watch notify
 
-dev-notify:
-	cd services/notify && make dev
+dev-greet:
+	cd services/greet && make dev
 
-func-start-notify:
-	cd services/notify && make func-start
+test-greet:
+	cd services/greet && make test-handlers
 
-test-notify:
-	cd services/notify && make test-handlers
+lint-greet:
+	cd services/greet && make lint
 
-lint-notify:
-	cd services/notify && make lint
-
-lint-fix-notify:
-	cd services/notify && make lint-fix
+lint-fix-greet:
+	cd services/greet && make lint-fix
 
 #----INSTALLATION----
 
