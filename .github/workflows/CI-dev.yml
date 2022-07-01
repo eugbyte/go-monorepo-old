@@ -39,6 +39,14 @@ jobs:
       - name: Install Go modules, gotest and golangci-lint
         run: go mod download && make install-gotest && sudo make install-lint
 
+      - name: Check docker version
+        run: docker version
+
+      - name: Install docker-compose
+        run: |
+          curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose \
+          && sudo chmod +x /usr/local/bin/docker-compose
+
       - name: Run test
         run: make test-notify
 
