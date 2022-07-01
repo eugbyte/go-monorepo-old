@@ -1,17 +1,13 @@
 #----DEVELOPMENT----
 tidy:
 	go mod tidy -e
-
 build:
 	export GO111MODULE=on
 	go build main.go
-
 dev:
 	go run main.go
-
 watch:
 	when-changed -r -1 -s "./" make build
-
 clean:
 	rm -rf ./bin ./vendor go.sum
 
@@ -19,7 +15,6 @@ clean:
 test-handlers:
 	gotest -v ./hello_handler/... || go clean -testcache
 	go clean -testcache
-
 test:
 	make test-handlers
 
@@ -30,6 +25,5 @@ lint:
 			exit 1;\
 	fi
 	golangci-lint run
-
 lint-fix:
 	golangci-lint run --fix
